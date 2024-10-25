@@ -16,7 +16,7 @@ def dataframe_data(dataframe):
     #print(dataframe.shape)
     #print(dataframe.head())
     #print(dataframe.tail())
-    print(dataframe.columns)
+    #print(dataframe.columns)
     print(dataframe.dtypes)
     #print(dataframe.info)
     #print(dataframe.describe)
@@ -36,15 +36,12 @@ def prepare_data(df,npc):
     # Change display info
     df['start'] = pd.to_datetime(df['start'], format = '%d/%m/%Y')
     df['end'] = pd.to_datetime(df['end'], format = '%d/%m/%Y')
-    print(df.loc[:, ['start', 'end']].dtypes)
 
     # Merge two file with similar info in one column of each file 
     df_merge = df.merge(npc, how='left', left_on='country', right_on='Name')
-    print(df_merge[['country', 'Code', 'Name']])
 
     # Remove unwanted columns
     df_prepared = df.drop(columns=['URL', 'disabilities_included', 'highlights'], axis=1)
-    print(df_prepared)
 
 if __name__ == '__main__':
     paralympics_datafile_csv = Path(__file__).parent.parent.joinpath('src', 'tutorialpkg', 'data', 'paralympics_events_raw.csv')
@@ -59,7 +56,7 @@ if __name__ == '__main__':
     prepare_data(df_csv,npc_df)
     #change_type(df_xsl)
 
-    #dataframe_data(df_csv)
+    dataframe_data(df_xsl)
     #print("Done")
     #dataframe_data(df_xsl)
     #print("Done")
