@@ -44,9 +44,9 @@ def prepare_data(df,npc):
     df_prepared = df.drop(columns=['URL', 'disabilities_included', 'highlights'], axis=1)
 
 if __name__ == '__main__':
-    paralympics_datafile_csv = Path(__file__).parent.parent.joinpath('src', 'tutorialpkg', 'data', 'paralympics_events_raw.csv')
-    paralympics_datafile_xslx = Path(__file__).parent.parent.joinpath('src', 'tutorialpkg', 'data', 'paralympics_all_raw.xlsx')
-    npc_code = Path(__file__).parent.parent.joinpath('src', 'tutorialpkg', 'data', 'npc_codes.csv')
+    paralympics_datafile_csv = Path(__file__).parent.joinpath('tutorialpkg', 'data', 'paralympics_events_raw.csv')
+    paralympics_datafile_xslx = Path(__file__).parent.joinpath('tutorialpkg', 'data', 'paralympics_all_raw.xlsx')
+    npc_code = Path(__file__).parent.joinpath('tutorialpkg', 'data', 'npc_codes.csv')
 
     df_csv = pd.read_csv(paralympics_datafile_csv)
     df_xsl = pd.read_excel(paralympics_datafile_xslx)
