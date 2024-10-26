@@ -34,8 +34,8 @@ def prepare_data(df,npc):
     print(df.loc[:, float_columns].dtypes)
 
     # Change display info
-    df['start'] = pd.to_datetime(df['start'], format = '%d/%m/%Y')
-    df['end'] = pd.to_datetime(df['end'], format = '%d/%m/%Y')
+    #df['start'] = pd.to_datetime(df['start'], format = '%d/%m/%Y')
+    #df['end'] = pd.to_datetime(df['end'], format = '%d/%m/%Y')
 
     # Merge two file with similar info in one column of each file 
     df_merge = df.merge(npc, how='left', left_on='country', right_on='Name')
@@ -56,7 +56,7 @@ if __name__ == '__main__':
     prepare_data(df_csv,npc_df)
     #change_type(df_xsl)
 
-    dataframe_data(df_xsl)
+    dataframe_data(df_csv)
     #print("Done")
     #dataframe_data(df_xsl)
     #print("Done")
