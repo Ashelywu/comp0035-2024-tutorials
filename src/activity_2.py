@@ -3,7 +3,7 @@ import pandas as pd
 
 pd.set_option("display.max_columns", None)
 
-def dataframe_data(dataframe):
+def explore_data(dataframe):
     """Summary or Description of the Function
  
         Parameters:
@@ -56,7 +56,7 @@ if __name__ == '__main__':
     prepare_data(df_csv,npc_df)
     #change_type(df_xsl)
 
-    dataframe_data(df_csv)
+    explore_data(df_csv)
     #print("Done")
     #dataframe_data(df_xsl)
     #print("Done")
